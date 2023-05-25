@@ -1,12 +1,13 @@
+// added necessary imports
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { Circle, Square, Triangle } = require('./lib/shapes');
-
+// created a class SVG to render the SVG file and added the necessary methods to set the shape color, text, and shape itself 
 class SVG {
   constructor() {
     this.textElement = '';
     this.shapeElement = '';
-    this.shapeColor = ''; // Added shapeColor property
+    this.shapeColor = ''; 
   }
 
   render() {
@@ -22,12 +23,11 @@ class SVG {
   }
 
   setShape(shape) {
-    // Added code to apply the shape color
     shape.setColor(this.shapeColor);
     this.shapeElement = shape.render();
   }
 }
-
+// inquirer prompts to ask the user for the text, text color, shape color, and shape itself
 const prompts = [
   {
     type: 'input',
@@ -51,14 +51,14 @@ const prompts = [
     choices: ['Circle', 'Square', 'Triangle'],
   },
 ];
-
+// function to write the SVG file and throw an error if there is one 
 function writeSVG(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
-    console.log('The file has been saved!');
+    console.log('Generated logo.svg');
   });
 }
-
+// main function to run the program and render the SVG file
 async function main() {
   const answers = await inquirer.prompt(prompts);
   const svg = new SVG();
@@ -79,5 +79,5 @@ async function main() {
   const data = svg.render();
   writeSVG(fileName, data);
 }
-
+// calling the main function
 main();
