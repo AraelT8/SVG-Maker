@@ -16,7 +16,7 @@ For the installion process clone this repo intp your local machine, navigate to 
 ## Usage
 
 After following the installation process please refer to the following video for a demonstration on how to use this application:
-https://drive.google.com/file/d/1GvLbkHu7Jty_6kezKoY-CiFpkV-nlF3z/view
+https://drive.google.com/file/d/1DOKg5vVjjvMsnqqhl46v2282CJ7ZkrHD/view
 
 
 ## Credits
